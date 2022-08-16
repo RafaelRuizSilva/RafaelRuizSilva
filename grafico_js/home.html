@@ -1,0 +1,218 @@
+<head>
+    <!--Plotly.js-->
+        <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body>
+    <div class="showcase__section" id="bubble">
+        <div class="spacer --small"></div>
+        <div class="ind">Total Adesão: 80</div>
+        <div id="bubbleplots">
+            <div class="bubbleplot" data-num="0">
+                <div class="plot" id="plotdiv"></div>
+                <div class="control-row">
+                SUPERVISOR:  <select class="supervisor"></select>
+                </div>
+                <br>
+                <br>
+                <div class="plot2" id="plotdiv2"></div>
+            </div>
+        </div>
+      </div>
+
+
+      <script>
+        Plotly.d3.csv('adesao_colabs.csv', function(err, rows){
+
+            function unpack(rows, key) {
+                return rows.map(function(row) { return row[key]; });
+            }
+
+            var supervisoresNomes = unpack(rows, 'SUPERVISOR'),
+            todosColaboradores = unpack(rows, 'COLABORADOR'),
+            adesao = unpack(rows, 'PERCENTUAL_ADESAO'),
+            total_adesao = unpack(rows, 'total_adesao'),
+            listaDeSupervisores = [],
+            supervisorAtual = [],
+            adesaoAtual = [],
+            colaboradorAtual = [],
+            tot_atual = []
+
+            // Tirando os supervisores duplicados e armazenando na listaDeSupervisores
+            for (var i = 0; i < supervisoresNomes.length; i++ ){
+                if (listaDeSupervisores.indexOf(supervisoresNomes[i]) === -1 ){
+                    listaDeSupervisores.push(supervisoresNomes[i]);
+                }
+            }
+            
+            
+            // Com base no SUPERVISOR selecionado no combobox, ele pega os colabs 
+            // e a adesão de cada um dele e armazena nas respectivas listas
+            function pegaAdesaoColabsPorSupervisao(supervisorEscolhido) {
+                adesaoAtual = [];
+                colaboradorAtual = [];
+                tot_atual = [];
+                for (var i = 0 ; i < supervisoresNomes.length; i++){
+                    supervisoresNomes[i] = supervisoresNomes[i].trim();
+                    if ( supervisoresNomes[i] === supervisorEscolhido) {
+                        tot_atual.push(total_adesao[i]);
+                        adesaoAtual.push(adesao[i]);
+                        colaboradorAtual.push(todosColaboradores[i]);
+                    } 
+                }
+            };
+            
+
+            // Setando Supervisor Padrão
+            graficoBarras('LEANDRO');   
+
+            // Função que gera o gráfico de barras
+            function graficoBarras(supervisorEscolhido) {
+                pegaAdesaoColabsPorSupervisao(supervisorEscolhido);  
+
+                var trace1 = {
+                x: colaboradorAtual,
+                y: adesaoAtual,
+                type: 'bar',
+                marker: {
+                    size: 12, 
+                    opacity: 0.5
+                    }
+                };
+                var data = [trace1];
+
+                var layout = {
+                title: 'Adesão x Supervisão<br>'+ supervisorEscolhido
+                };
+
+                Plotly.newPlot('plotdiv', data, layout, {showSendToCloud: true});
+            };
+            
+            var innerContainer = document.querySelector('[data-num="0"'),
+            plotEl = innerContainer.querySelector('.plot'),
+            supSelector = innerContainer.querySelector('.supervisor')
+            indSelector = innerContainer.querySelector('.ind')
+
+            function atribuirOpcoes(textArray, selector) {
+                for (var i = 0; i < textArray.length;  i++) {
+                    var opcaoAtual = document.createElement('option');
+                    opcaoAtual.text = textArray[i];
+                    selector.appendChild(opcaoAtual);
+                } 
+            }
+            
+            atribuirOpcoes(listaDeSupervisores, supSelector);
+
+            function atualizaSup(){
+                graficoBarras(supSelector.value);
+            }
+
+
+            supSelector.addEventListener('change', atualizaSup, false);
+
+            supSelector.addEventListener('change', (event) => {
+                const indicador = document.querySelector('.ind');
+                indicador.textContent = `Total Adesão: ${tot_atual.toString().split(',')[0]}`;
+            });
+            
+            
+        });
+
+
+        // GRAFICO 2
+
+        Plotly.d3.csv('adesao_colabs.csv', function(err, rows){
+
+        function unpack(rows, key) {
+            return rows.map(function(row) { return row[key]; });
+        }
+
+        var supervisoresNomes = unpack(rows, 'SUPERVISOR'),
+        qtd_colabs_ativos = unpack(rows, 'qtd_colabs_ativos'),
+        qtd_colabs_total = unpack(rows, 'qtd_colabs_total'),
+        listaDeSupervisores = [],
+        supervisorAtual = []
+        qtd_ativos_atual = []
+        qtd_colabs_total_atual = []
+
+        // Tirando os supervisores duplicados e armazenando na listaDeSupervisores
+        for (var i = 0; i < supervisoresNomes.length; i++ ){
+            if (listaDeSupervisores.indexOf(supervisoresNomes[i]) === -1 ){
+                listaDeSupervisores.push(supervisoresNomes[i]);
+            }
+        }
+
+
+        // Com base no SUPERVISOR selecionado no combobox, ele pega os colabs 
+        // e a adesão de cada um dele e armazena nas respectivas listas
+        function pegaAdesaoColabsPorSupervisao(supervisorEscolhido) {
+            qtd_ativos_atual = []
+            qtd_colabs_total_atual = []
+            for (var i = 0 ; i < supervisoresNomes.length; i++){
+                supervisoresNomes[i] = supervisoresNomes[i].trim();
+                if ( supervisoresNomes[i] === supervisorEscolhido) {
+                    qtd_ativos_atual.push(qtd_colabs_ativos[i]);
+                    qtd_colabs_total_atual.push(qtd_colabs_total[i]);
+                } 
+            }
+        };
+
+        
+        // Setando Supervisor Padrão
+        graficoBarras('LEANDRO');   
+
+        // Função que gera o gráfico de barras
+        function graficoBarras(supervisorEscolhido) {
+            pegaAdesaoColabsPorSupervisao(supervisorEscolhido);  
+            y_axis = [qtd_ativos_atual.toString().split(',')[0], qtd_colabs_total_atual.toString().split(',')[0]]
+
+            var trace1 = {
+            x: ['QTD Ativos', 'QTD Total Colabs'],
+            y: y_axis,
+            type: 'bar',
+            marker: {
+                size: 12, 
+                opacity: 0.5
+                }
+            };
+            var data = [trace1];
+
+            var layout = {
+            title: 'QTD Adesão<br>'+ supervisorEscolhido
+            };
+
+            Plotly.newPlot('plotdiv2', data, layout, {showSendToCloud: true});
+        };
+
+        var innerContainer = document.querySelector('[data-num="0"'),
+        plotEl = innerContainer.querySelector('.plot2'),
+        supSelector = innerContainer.querySelector('.supervisor')
+        indSelector = innerContainer.querySelector('.ind')
+
+        function atribuirOpcoes(textArray, selector) {
+            for (var i = 0; i < textArray.length;  i++) {
+                var opcaoAtual = document.createElement('option');
+                opcaoAtual.text = textArray[i];
+                //selector.appendChild(opcaoAtual);
+            } 
+        }
+
+        console.log(qtd_colabs_total_atual)
+        atribuirOpcoes(listaDeSupervisores, supSelector);
+
+        function atualizaSup(){
+            graficoBarras(supSelector.value);
+        }
+
+
+        supSelector.addEventListener('change', atualizaSup, false);
+
+        supSelector.addEventListener('change', (event) => {
+            const indicador = document.querySelector('.ind');
+            indicador.textContent = `Total Adesão:`;
+        });
+
+});
+           
+            
+      </script>
+</body>
