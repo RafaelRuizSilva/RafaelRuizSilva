@@ -37,6 +37,7 @@ Sou um profissional focado em resultados, com paixão por resolver problemas rea
 | Projeto | Descrição | Tecnologias |
 |--------|------------|-------------|
 | [🔎 Assistente de Assinaturas](https://github.com/RafaelRuizSilva/assistente-assinaturas-deploy) | Sistema inteligente para validar assinaturas (genuínas ou forjadas) usando CNNs e ResNet50+SVM | `Python`, `Streamlit`, `ResUnet`, `ResNet50`, `OpenCV` |
+| [🎮 MauaEsports](https://github.com/RafaelRuizSilva/IMT-MauaEsports-S2) | Projeto Intedisciplinar do segundo semestre no Instituto Mauá de Tecnologia. | `Python`, `Angular`, `PostgreSql`, `Flask`, `Docker` |
 
 ---
 
