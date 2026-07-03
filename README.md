@@ -26,7 +26,6 @@ class RafaelRuiz(DataScientist):
         self.formacao   = "Ciência da Computação"
         self.foco       = ["Machine Learning", "Deep Learning", "MLOps"]
         self.dominios   = ["visão computacional", "NLP", "séries temporais"]
-        self.atualmente = "estudando Transformers por dentro — atenção incluída 🧠"
 
     def missao(self) -> str:
         return "transformar informação em valor"
