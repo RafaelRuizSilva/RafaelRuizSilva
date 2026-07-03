@@ -21,9 +21,10 @@
 ## 🧬 Sobre mim
 
 ```python
-class RafaelRuiz(DataScientist):
+class RafaelRuiz(DataScientist, MLEngineer):
     def __init__(self):
         self.formacao   = "Ciência da Computação"
+        self.mba        = "Inteligência Artificial & Big Data — ICMC/USP 🎓"
         self.foco       = ["Machine Learning", "Deep Learning", "MLOps"]
         self.dominios   = ["visão computacional", "NLP", "séries temporais"]
 
