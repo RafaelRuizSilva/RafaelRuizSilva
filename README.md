@@ -120,8 +120,8 @@ Projeto interdisciplinar do Instituto Mauá de Tecnologia: **plataforma full-sta
 
 <div align="center">
 
-<img height="170" src="https://github-readme-stats.vercel.app/api?username=RafaelRuizSilva&show_icons=true&theme=tokyonight&hide_border=true&bg_color=00000000&title_color=38BDF8&icon_color=C084FC&locale=pt-br" alt="Estatísticas do GitHub"/>
-<img height="170" src="https://github-readme-stats.vercel.app/api/top-langs/?username=RafaelRuizSilva&layout=compact&theme=tokyonight&hide_border=true&bg_color=00000000&title_color=38BDF8&locale=pt-br" alt="Linguagens mais usadas"/>
+<img height="185" src="https://github-profile-summary-cards.vercel.app/api/cards/stats?username=RafaelRuizSilva&theme=tokyonight" alt="Estatísticas do GitHub"/>
+<img height="185" src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=RafaelRuizSilva&theme=tokyonight" alt="Linguagens mais usadas"/>
 
 <img src="https://github-readme-streak-stats.herokuapp.com/?user=RafaelRuizSilva&theme=tokyonight&hide_border=true&background=00000000&ring=38BDF8&fire=C084FC&currStreakLabel=38BDF8&locale=pt_BR" alt="Sequência de contribuições"/>
 
