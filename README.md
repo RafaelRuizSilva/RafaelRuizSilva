@@ -39,13 +39,35 @@ class RafaelRuiz(DataScientist, MLEngineer):
 
 <br/>
 
-## 🚀 Projetos em destaque
+## 🚀 Projeto em destaque
+
+<table>
+<tr>
+<td valign="top">
+
+### 🏦 MLOps Credit Risk Platform <img src="https://img.shields.io/badge/NOVO-C084FC?style=flat-square" alt="novo"/>
+
+Plataforma de ML **de ponta a ponta e 100% gratuita**: modelo de risco de crédito servido por API FastAPI hexagonal (37 testes), com **gate de promoção automática** de modelos (LightGBM só virou champion ao superar o baseline — AUC 0.858 → 0.866), auditoria de toda predição em PostgreSQL, explicabilidade TreeSHAP por decisão, fairness com Fairlearn, monitoramento com Prometheus/Grafana e drift com Evidently. Cada peça open-source simula um serviço AWS (MinIO→S3, MLflow→Model Registry, Prefect→SageMaker Pipelines) — o desenho interativo mostra o paralelo peça por peça.
+
+<img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white"/> <img src="https://img.shields.io/badge/FastAPI-009688?style=flat-square&logo=fastapi&logoColor=white"/> <img src="https://img.shields.io/badge/MLflow-0194E2?style=flat-square&logo=mlflow&logoColor=white"/> <img src="https://img.shields.io/badge/Angular-DD0031?style=flat-square&logo=angular&logoColor=white"/> <img src="https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white"/> <img src="https://img.shields.io/badge/PostgreSQL-4169E1?style=flat-square&logo=postgresql&logoColor=white"/> <img src="https://img.shields.io/badge/Prometheus-E6522C?style=flat-square&logo=prometheus&logoColor=white"/> <img src="https://img.shields.io/badge/Grafana-F46800?style=flat-square&logo=grafana&logoColor=white"/>
+
+[![Repo](https://img.shields.io/badge/📂_Repositório-0D1117?style=for-the-badge&logo=github)](https://github.com/RafaelRuizSilva/mlops-credit-risk-plataform)
+[![Demo](https://img.shields.io/badge/▶_Demo_ao_vivo-38BDF8?style=for-the-badge&logoColor=white)](https://rafaelruizsilva.github.io/mlops-credit-risk-plataform/)
+[![Arquitetura](https://img.shields.io/badge/🏗️_Arquitetura_interativa-818CF8?style=for-the-badge)](https://rafaelruizsilva.github.io/mlops-credit-risk-plataform/arquitetura.html)
+
+</td>
+</tr>
+</table>
+
+<br/>
+
+## 🧪 Mais projetos
 
 <table>
 <tr>
 <td width="50%" valign="top">
 
-### 🧠 The Transformer Lab <img src="https://img.shields.io/badge/NOVO-C084FC?style=flat-square" alt="novo"/>
+### 🧠 The Transformer Lab
 
 Laboratório interativo que **disseca um Transformer em 15 etapas ao vivo no navegador**: tokenização, embeddings, atenção multi-head (Q·Kᵀ/√d), residuais, feed-forward e geração autorregressiva — com heatmaps clicáveis mostrando cada conta de verdade.
 
@@ -57,7 +79,7 @@ Laboratório interativo que **disseca um Transformer em 15 etapas ao vivo no nav
 </td>
 <td width="50%" valign="top">
 
-### ☁️ ML Lifecycle Diagram <img src="https://img.shields.io/badge/NOVO-C084FC?style=flat-square" alt="novo"/>
+### ☁️ ML Lifecycle Diagram
 
 O diagrama do **AWS Well-Architected ML Lens transformado em ferramenta de estudo interativa**: 15 componentes clicáveis (Feature Store, Model Registry, Lineage Tracker...), modo aula guiada e quiz de 8 perguntas para fixar o ciclo de vida de ML.
 
