@@ -1,0 +1,208 @@
+<style>
+  * {
+  font-family: sans-serif; /* Change your font family */
+}
+
+.dataframe {
+  border-collapse: collapse;
+  margin: 25px 0;
+  font-size: 0.9em;
+  min-width: 400px;
+  border-radius: 5px 5px 0 0;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.dataframe thead tr {
+  background-color: #009879;
+  color: #ffffff;
+  text-align: left;
+  font-weight: bold;
+}
+
+.dataframe th,
+.dataframe td {
+  padding: 12px 15px;
+}
+
+.dataframe tbody tr {
+  border-bottom: 1px solid #dddddd;
+}
+
+.dataframe tbody tr:nth-of-type(even) {
+  background-color: #f3f3f3;
+}
+
+.dataframe tbody tr:last-of-type {
+  border-bottom: 2px solid #009879;
+}
+
+.dataframe tbody tr.active-row {
+  font-weight: bold;
+  color: #009879;
+}
+
+
+</style>
+
+<div class="outer-wrapper">
+<div class="table-wrapper">
+
+<script src="./filter.js"></script>
+<table border=0 class="dataframe" id="emp-table">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th col-index = 2>COLABORADOR
+        <select class="table-filter" onchange="filter_rows()">
+          <option value="all"></option>
+        </select>
+      </th>
+      <th col-index = 3>SUPERVISOR
+        <select class="table-filter" onchange="filter_rows()">
+          <option value="all"></option>
+        </select>
+      </th>
+      <th>QTD Pontos preencheidos</th>
+      <th>QTD Pontos totais</th>
+      <th>PERCENTUAL_ADESAO</th>
+      <th>total_adesao</th>
+      <th>qtd_colabs_total</th>
+      <th>qtd_colabs_ativos</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>JOSE ALFREDO CAMARGO</td>
+      <td>LEANDRO</td>
+      <td>10</td>
+      <td>30</td>
+      <td>33.333333</td>
+      <td>80</td>
+      <td>32</td>
+      <td>6</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>MARINA CLEIDSA</td>
+      <td>LEANDRO</td>
+      <td>25</td>
+      <td>30</td>
+      <td>83.333333</td>
+      <td>80</td>
+      <td>32</td>
+      <td>6</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>JONAS CAMILO</td>
+      <td>LEANDRO</td>
+      <td>30</td>
+      <td>30</td>
+      <td>100.000000</td>
+      <td>80</td>
+      <td>32</td>
+      <td>6</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>MARCEL COELHO</td>
+      <td>LEANDRO</td>
+      <td>2</td>
+      <td>26</td>
+      <td>7.692308</td>
+      <td>80</td>
+      <td>32</td>
+      <td>6</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>RAFAEL RUIZ DA SILVA</td>
+      <td>BERNADINO</td>
+      <td>5</td>
+      <td>13</td>
+      <td>38.461538</td>
+      <td>33</td>
+      <td>15</td>
+      <td>12</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>GUILHERME RUIZ DA SILVA</td>
+      <td>BERNADINO</td>
+      <td>8</td>
+      <td>12</td>
+      <td>66.666667</td>
+      <td>33</td>
+      <td>15</td>
+      <td>12</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>BRUNO NASCIMENTO</td>
+      <td>BERNADINO</td>
+      <td>8</td>
+      <td>20</td>
+      <td>40.000000</td>
+      <td>33</td>
+      <td>15</td>
+      <td>12</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>ISAC DE VIETRO</td>
+      <td>BERNADINO</td>
+      <td>15</td>
+      <td>30</td>
+      <td>50.000000</td>
+      <td>33</td>
+      <td>15</td>
+      <td>12</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>HIGOR DIAS</td>
+      <td>ANA</td>
+      <td>18</td>
+      <td>30</td>
+      <td>60.000000</td>
+      <td>12</td>
+      <td>24</td>
+      <td>20</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>NALDO</td>
+      <td>ANA</td>
+      <td>27</td>
+      <td>30</td>
+      <td>90.000000</td>
+      <td>12</td>
+      <td>24</td>
+      <td>20</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>ALEZIN</td>
+      <td>ANA</td>
+      <td>30</td>
+      <td>30</td>
+      <td>100.000000</td>
+      <td>12</td>
+      <td>24</td>
+      <td>20</td>
+    </tr>
+  </tbody>
+</table>
+
+<script>
+  window.onload = () => {
+      console.log(document.querySelector("#emp-table > tbody > tr:nth-child(1) > td:nth-child(2) ").innerHTML);
+  };
+
+  getUniqueValuesFromColumn()
+  
+</script>
+</div>
+</div>

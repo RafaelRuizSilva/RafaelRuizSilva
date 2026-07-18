@@ -1,0 +1,162 @@
+<svg width="1000" height="320" viewBox="0 0 1000 320" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Rafael Ruiz da Silva — Data Science e Machine Learning">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1000" y2="320" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#0B1120"/>
+      <stop offset="0.55" stop-color="#0E1630"/>
+      <stop offset="1" stop-color="#101A3C"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="560" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#38BDF8">
+        <animate attributeName="stop-color" values="#38BDF8;#818CF8;#C084FC;#38BDF8" dur="8s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="0.5" stop-color="#818CF8">
+        <animate attributeName="stop-color" values="#818CF8;#C084FC;#38BDF8;#818CF8" dur="8s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="1" stop-color="#C084FC">
+        <animate attributeName="stop-color" values="#C084FC;#38BDF8;#818CF8;#C084FC" dur="8s" repeatCount="indefinite"/>
+      </stop>
+    </linearGradient>
+    <filter id="glow" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur stdDeviation="3.5" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <pattern id="dots" width="26" height="26" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1.2" fill="#3B4A6B" opacity="0.35"/>
+    </pattern>
+    <clipPath id="frame"><rect width="1000" height="320" rx="18"/></clipPath>
+  </defs>
+
+  <g clip-path="url(#frame)">
+    <rect width="1000" height="320" fill="url(#bg)"/>
+    <rect width="1000" height="320" fill="url(#dots)"/>
+
+    <!-- linha de varredura -->
+    <rect x="0" y="0" width="1000" height="2" fill="#38BDF8" opacity="0.12">
+      <animate attributeName="y" values="-4;324" dur="7s" repeatCount="indefinite"/>
+    </rect>
+
+    <!-- símbolos flutuando -->
+    <g font-family="Georgia, 'Times New Roman', serif" fill="#7C8DB5" font-size="22" opacity="0.28">
+      <text x="565" y="52">Σ<animateTransform attributeName="transform" type="translate" values="0 0;0 -9;0 0" dur="6s" repeatCount="indefinite"/></text>
+      <text x="948" y="66" font-size="18">∇<animateTransform attributeName="transform" type="translate" values="0 0;0 8;0 0" dur="7s" repeatCount="indefinite"/></text>
+      <text x="620" y="300" font-size="19">∂<animateTransform attributeName="transform" type="translate" values="0 0;0 -7;0 0" dur="5.5s" repeatCount="indefinite"/></text>
+      <text x="955" y="290" font-size="17">σ²<animateTransform attributeName="transform" type="translate" values="0 0;0 -10;0 0" dur="8s" repeatCount="indefinite"/></text>
+      <text x="42" y="46" font-size="18">μ<animateTransform attributeName="transform" type="translate" values="0 0;0 7;0 0" dur="6.5s" repeatCount="indefinite"/></text>
+      <text x="500" y="288" font-size="16">θ<animateTransform attributeName="transform" type="translate" values="0 0;0 -6;0 0" dur="7.5s" repeatCount="indefinite"/></text>
+    </g>
+
+    <!-- ===== rede neural ===== -->
+    <g stroke="#4C5E8A" stroke-width="1" opacity="0.5">
+      <line x1="648" y1="80"  x2="768" y2="75"/>
+      <line x1="648" y1="80"  x2="768" y2="130"/>
+      <line x1="648" y1="80"  x2="768" y2="185"/>
+      <line x1="648" y1="80"  x2="768" y2="240"/>
+      <line x1="648" y1="135" x2="768" y2="75"/>
+      <line x1="648" y1="135" x2="768" y2="130"/>
+      <line x1="648" y1="135" x2="768" y2="185"/>
+      <line x1="648" y1="135" x2="768" y2="240"/>
+      <line x1="648" y1="190" x2="768" y2="75"/>
+      <line x1="648" y1="190" x2="768" y2="130"/>
+      <line x1="648" y1="190" x2="768" y2="185"/>
+      <line x1="648" y1="190" x2="768" y2="240"/>
+      <line x1="648" y1="245" x2="768" y2="75"/>
+      <line x1="648" y1="245" x2="768" y2="130"/>
+      <line x1="648" y1="245" x2="768" y2="185"/>
+      <line x1="648" y1="245" x2="768" y2="240"/>
+      <line x1="768" y1="75"  x2="888" y2="115"/>
+      <line x1="768" y1="75"  x2="888" y2="205"/>
+      <line x1="768" y1="130" x2="888" y2="115"/>
+      <line x1="768" y1="130" x2="888" y2="205"/>
+      <line x1="768" y1="185" x2="888" y2="115"/>
+      <line x1="768" y1="185" x2="888" y2="205"/>
+      <line x1="768" y1="240" x2="888" y2="115"/>
+      <line x1="768" y1="240" x2="888" y2="205"/>
+    </g>
+
+    <!-- partículas viajando pelas conexões -->
+    <g filter="url(#glow)">
+      <circle r="3" fill="#38BDF8">
+        <animateMotion path="M648,80 L768,130" dur="1.8s" begin="0s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0;1;1;0" dur="1.8s" repeatCount="indefinite"/>
+      </circle>
+      <circle r="3" fill="#818CF8">
+        <animateMotion path="M648,190 L768,75" dur="2.2s" begin="0.5s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0;1;1;0" dur="2.2s" begin="0.5s" repeatCount="indefinite"/>
+      </circle>
+      <circle r="3" fill="#C084FC">
+        <animateMotion path="M648,245 L768,185" dur="2s" begin="1s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0;1;1;0" dur="2s" begin="1s" repeatCount="indefinite"/>
+      </circle>
+      <circle r="3" fill="#38BDF8">
+        <animateMotion path="M768,130 L888,205" dur="1.6s" begin="0.9s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0;1;1;0" dur="1.6s" begin="0.9s" repeatCount="indefinite"/>
+      </circle>
+      <circle r="3" fill="#818CF8">
+        <animateMotion path="M768,240 L888,115" dur="2.4s" begin="0.2s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0;1;1;0" dur="2.4s" begin="0.2s" repeatCount="indefinite"/>
+      </circle>
+      <circle r="3" fill="#C084FC">
+        <animateMotion path="M648,135 L768,240" dur="2.1s" begin="1.4s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0;1;1;0" dur="2.1s" begin="1.4s" repeatCount="indefinite"/>
+      </circle>
+    </g>
+
+    <!-- neurônios -->
+    <g filter="url(#glow)">
+      <g fill="#38BDF8">
+        <circle cx="648" cy="80" r="7"><animate attributeName="r" values="7;9;7" dur="2.4s" begin="0s" repeatCount="indefinite"/></circle>
+        <circle cx="648" cy="135" r="7"><animate attributeName="r" values="7;9;7" dur="2.4s" begin="0.6s" repeatCount="indefinite"/></circle>
+        <circle cx="648" cy="190" r="7"><animate attributeName="r" values="7;9;7" dur="2.4s" begin="1.2s" repeatCount="indefinite"/></circle>
+        <circle cx="648" cy="245" r="7"><animate attributeName="r" values="7;9;7" dur="2.4s" begin="1.8s" repeatCount="indefinite"/></circle>
+      </g>
+      <g fill="#818CF8">
+        <circle cx="768" cy="75"  r="7"><animate attributeName="r" values="7;9;7" dur="2.4s" begin="0.3s" repeatCount="indefinite"/></circle>
+        <circle cx="768" cy="130" r="7"><animate attributeName="r" values="7;9;7" dur="2.4s" begin="0.9s" repeatCount="indefinite"/></circle>
+        <circle cx="768" cy="185" r="7"><animate attributeName="r" values="7;9;7" dur="2.4s" begin="1.5s" repeatCount="indefinite"/></circle>
+        <circle cx="768" cy="240" r="7"><animate attributeName="r" values="7;9;7" dur="2.4s" begin="2.1s" repeatCount="indefinite"/></circle>
+      </g>
+      <g fill="#C084FC">
+        <circle cx="888" cy="115" r="8"><animate attributeName="r" values="8;10;8" dur="2.4s" begin="0.4s" repeatCount="indefinite"/></circle>
+        <circle cx="888" cy="205" r="8"><animate attributeName="r" values="8;10;8" dur="2.4s" begin="1.6s" repeatCount="indefinite"/></circle>
+      </g>
+    </g>
+
+    <!-- ===== texto ===== -->
+    <g font-family="'Segoe UI', Ubuntu, Helvetica, Arial, sans-serif">
+      <text x="60" y="96" font-family="'Cascadia Code', Consolas, monospace" font-size="19" fill="#7DD3FC" opacity="0">
+        &gt;_ olá, eu sou
+        <animate attributeName="opacity" values="0;1" dur="0.6s" begin="0.2s" fill="freeze"/>
+      </text>
+
+      <text x="58" y="152" font-size="48" font-weight="800" fill="url(#accent)" opacity="0" filter="url(#glow)">
+        Rafael Ruiz da Silva
+        <animate attributeName="opacity" values="0;1" dur="0.8s" begin="0.7s" fill="freeze"/>
+      </text>
+
+      <text x="60" y="192" font-size="21" fill="#A5B4D4" opacity="0">
+        Data Science  •  Machine Learning  •  Deep Learning
+        <animate attributeName="opacity" values="0;1" dur="0.8s" begin="1.3s" fill="freeze"/>
+      </text>
+
+      <g opacity="0">
+        <animate attributeName="opacity" values="0;1" dur="0.6s" begin="1.9s" fill="freeze"/>
+        <rect x="58" y="222" width="470" height="46" rx="9" fill="#0A0F1E" stroke="#26334F" stroke-width="1"/>
+        <circle cx="80" cy="245" r="4.5" fill="#F87171"/>
+        <circle cx="97" cy="245" r="4.5" fill="#FBBF24"/>
+        <circle cx="114" cy="245" r="4.5" fill="#34D399"/>
+        <text x="132" y="251" font-family="'Cascadia Code', Consolas, monospace" font-size="15" fill="#8FE6C0">
+          $ python transformar_dados.py --em valor
+        </text>
+        <rect x="478" y="235" width="9" height="17" fill="#38BDF8">
+          <animate attributeName="opacity" values="1;0;1" dur="1.1s" repeatCount="indefinite"/>
+        </rect>
+      </g>
+    </g>
+
+    <!-- borda -->
+    <rect x="0.5" y="0.5" width="999" height="319" rx="18" stroke="#2B3A5E" fill="none"/>
+  </g>
+</svg>
